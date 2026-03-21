@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Admin - Category Management</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🏷️ Categories Management</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="chapter_organizations.html">Organizations</a>
+                <a href="academic_years.html">Academic Years</a>
+                <a href="categories.html" class="active">Categories</a>
+                <a href="deadlines.html">Deadlines</a>
+                <button onclick="logout()" class="btn-logout">Sign Out</button>
+            </nav>
+        </header>
+
+        <!-- Create Category -->
+        <div class="section">
+            <h2>➕ Create New Category</h2>
+            <div class="form-group">
+                <label>Category Name:</label>
+                <input type="text" id="catName" placeholder="e.g., Grants, Events, Supplies">
+            </div>
+            <div class="form-group">
+                <label>Type:</label>
+                <select id="catType">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </div>
+            <button class="success" id="createBtn">Create Category</button>
+            <div class="output" id="createOutput" style="display:none"></div>
+        </div>
+
+        <!-- List Categories -->
+        <div class="section">
+            <h2>📋 All Categories</h2>
+            <button id="refreshBtn">Refresh List</button>
+            <table id="catTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Scope</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="catTableBody">
+                    <tr>
+                        <td colspan="5" style="text-align:center">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Update Modal (hidden by default) -->
+        <div id="updateModal"
+            style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000">
+            <div style="background:#fff;max-width:500px;margin:100px auto;padding:30px;border-radius:8px">
+                <h2>Edit Category</h2>
+                <input type="hidden" id="updateId">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" id="updateName">
+                </div>
+                <div class="form-group">
+                    <label>Type:</label>
+                    <select id="updateType">
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+                <div class="form-group" id="makeGlobalContainer" style="display:none">
+                    <label style="display:inline-block;cursor:pointer">
+                        <input type="checkbox" id="makeGlobal"> Make Global (Admin)
+                    </label>
+                    <p style="font-size:12px;color:#666;margin-top:5px">Convert this user-specific category to a global
+                        category available to everyone.</p>
+                </div>
+                <button class="success" id="saveUpdateBtn">Save Changes</button>
+                <button id="cancelUpdateBtn">Cancel</button>
+                <div class="output" id="updateOutput" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="categories.js"></script>
+    <script src="admin-check.js"></script>
+    <script src="admin-logout.js"></script>
+</body>
+
+</html>

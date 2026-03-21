@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadline Management - HKN Budget Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Deadline Management</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="chapter_organizations.html">Organizations</a>
+                <a href="academic_years.html">Academic Years</a>
+                <a href="categories.html">Categories</a>
+                <a href="deadlines.html" class="active">Deadlines</a>
+                <button onclick="logout()" class="btn-logout">Sign Out</button>
+            </nav>
+        </header>
+
+        <main>
+            <div class="deadline-sections">
+                <!-- Official Deadlines Section -->
+                <div class="deadline-section">
+                    <div class="section-header">
+                        <h2>🏛️ Official Deadlines</h2>
+                        <button class="btn-create" onclick="openCreateModal()">+ Create Official</button>
+                    </div>
+                    <div id="officialDeadlines">
+                        <div class="empty-state">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Grant Applications Section -->
+                <div class="deadline-section">
+                    <h2>📝 Grant Applications</h2>
+                    <p class="section-description">
+                        Manage user applications for grants and funding.
+                    </p>
+                    <div id="grantApplications">
+                        <div class="empty-state">Loading applications...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Create/Edit Modal -->
+    <div id="deadlineModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Create Official Deadline</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="deadlineForm" onsubmit="saveDeadline(event)">
+                <input type="hidden" id="deadlineId">
+
+                <div class="form-group">
+                    <label for="deadlineName">Event/Grant/Fund Name *</label>
+                    <input type="text" id="deadlineName" required placeholder="e.g., IEEE Conference Grant">
+                </div>
+
+                <div class="form-group">
+                    <label for="deadlineDescription">Description</label>
+                    <textarea id="deadlineDescription" placeholder="Details about the deadline..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadlineStartDate">Registration Start Date *</label>
+                    <input type="date" id="deadlineStartDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadlineEndDate">Registration End Date *</label>
+                    <input type="date" id="deadlineEndDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="deadlineCategory">Category (Optional)</label>
+                    <select id="deadlineCategory">
+                        <option value="">-- No Category --</option>
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="button primary">Save Deadline</button>
+                    <button type="button" class="button secondary" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="applicationModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Manage Application</h3>
+                <button class="close-btn" onclick="closeAppModal()">&times;</button>
+            </div>
+            <div id="appDetails">
+                <!-- Populated by JS -->
+            </div>
+            <div class="form-group">
+                <label for="appStage">Current Stage (Fund Location)</label>
+                <select id="appStage" onchange="updateAppStatus()">
+                    <option value="1">Stage 1 – Request Submitted</option>
+                    <option value="2">Stage 2 – HQ Approved, Funds to Chapter</option>
+                    <option value="3">Stage 3 – Chapter Disbursing to User</option>
+                    <option value="4">Stage 4 – Distributed (Funds Delivered)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="appApprovedAmount">Approved Amount ($)</label>
+                <input type="number" id="appApprovedAmount" step="0.01" placeholder="0.00">
+                <small class="form-hint">Required for creating transaction at Stage 4</small>
+            </div>
+            <div class="form-group">
+                <label for="appStatus">Update Status</label>
+                <select id="appStatus" onchange="updateAppStatus()">
+                    <option value="pending_review">Pending Review</option>
+                    <option value="approved">Approved</option>
+                    <option value="payment_processing">Payment Processing</option>
+                    <option value="completed">Completed</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="button secondary" onclick="closeAppModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="deadlines.js"></script>
+    <script src="admin-check.js"></script>
+    <script src="admin-logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+[
+    {
+        "id": "cat-001",
+        "name": "Consultants"
+    },
+    {
+        "id": "cat-002",
+        "name": "Research/Surveys"
+    },
+    {
+        "id": "cat-003",
+        "name": "Food & Beverage"
+    },
+    {
+        "id": "cat-004",
+        "name": "Communication"
+    },
+    {
+        "id": "cat-005",
+        "name": "Travel & Expense",
+        "subcategories": [
+            "Airfare",
+            "Lodging",
+            "Ground Transportation",
+            "Per Diem",
+            "Other Travel Costs"
+        ]
+    },
+    {
+        "id": "cat-006",
+        "name": "Meetings/Conferences/Workshops"
+    },
+    {
+        "id": "cat-007",
+        "name": "Promotion/Publicity"
+    },
+    {
+        "id": "cat-008",
+        "name": "Equipment/Technology"
+    },
+    {
+        "id": "cat-009",
+        "name": "Other"
+    }
+]

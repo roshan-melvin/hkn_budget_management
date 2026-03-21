@@ -1,0 +1,81 @@
+[
+    {
+        "id": "expense-001",
+        "budgetId": "budget-001",
+        "item": "Keynote Speaker Travel Reimbursement",
+        "category": "Travel & Expense",
+        "subcategory": "Airfare",
+        "cost": 850.00,
+        "fundedBy": "IEEE Chapter Fund",
+        "comments": "Roundtrip flight for Dr. Smith from Boston to host AI workshop",
+        "date": 1698796800,
+        "status": "payment_processing",
+        "createdAt": 1698710400,
+        "statusHistory": [
+            {
+                "stage": "draft",
+                "timestamp": 1698710400
+            },
+            {
+                "stage": "pending_review",
+                "timestamp": 1698796800
+            },
+            {
+                "stage": "approved",
+                "timestamp": 1698883200
+            },
+            {
+                "stage": "payment_processing",
+                "timestamp": 1698969600
+            }
+        ],
+        "fundSourceHistory": [
+            {
+                "stageId": 1,
+                "status": "completed",
+                "timestamp": 1698710400,
+                "notes": "Funding request initiated"
+            },
+            {
+                "stageId": 2,
+                "status": "processing",
+                "timestamp": 1698969600,
+                "notes": "Processing at Chapter level"
+            }
+        ]
+    },
+    {
+        "id": "expense-002",
+        "budgetId": "budget-001",
+        "item": "Workshop Venue Booking",
+        "category": "Meetings/Conferences/Workshops",
+        "cost": 1200.00,
+        "fundedBy": "University Grant",
+        "comments": "Booking for the main auditorium",
+        "date": 1699401600,
+        "status": "approved",
+        "createdAt": 1699000000,
+        "statusHistory": [
+            {
+                "stage": "draft",
+                "timestamp": 1699000000
+            },
+            {
+                "stage": "pending_review",
+                "timestamp": 1699100000
+            },
+            {
+                "stage": "approved",
+                "timestamp": 1699401600
+            }
+        ],
+        "fundSourceHistory": [
+            {
+                "stageId": 1,
+                "status": "completed",
+                "timestamp": 1699000000,
+                "notes": "Funding request initiated"
+            }
+        ]
+    }
+]

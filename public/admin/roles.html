@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Roles - Admin | IEEE HKN Budget</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Roles Management</h1>
+            <p>Manage basic roles used by the system (e.g., Treasurer, Member)</p>
+            <div class="nav-links">
+                <a href="academic_years.html">Academic Years</a>
+                <a href="categories.html">Categories</a>
+                <a href="chapter_organizations.html">Chapter Organizations</a>
+                <a href="roles.html" style="font-weight:bold">Roles</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div id="message"></div>
+
+            <div class="form-group">
+                <h2 style="margin-bottom:20px;">Add New Role</h2>
+                <form id="addForm">
+                    <div class="form-group">
+                        <label for="roleName">Role Name *</label>
+                        <input type="text" id="roleName" placeholder="e.g., Treasurer" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Role</button>
+                </form>
+            </div>
+
+            <hr style="margin:30px 0; border:none; border-top:1px solid #eee;">
+
+            <h2 style="margin-bottom:20px;">All Roles</h2>
+            <div id="rolesTable">
+                <div class="loading">Loading roles...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Role</h2>
+            </div>
+            <form id="editForm">
+                <input type="hidden" id="editRoleId">
+                <div class="form-group">
+                    <label for="editRoleName">Role Name *</label>
+                    <input type="text" id="editRoleName" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="editRoleActive"> Active
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="roles.js"></script>
+</body>
+
+</html>

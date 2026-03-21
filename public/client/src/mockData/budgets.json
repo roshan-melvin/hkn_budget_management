@@ -1,0 +1,45 @@
+[
+    {
+        "id": "budget-001",
+        "name": "IEEE Workshop 2024",
+        "academicYear": "2024-2025",
+        "allocatedAmount": 5000.00,
+        "description": "Annual technical workshop for student members",
+        "status": "approved",
+        "createdAt": 1693526400,
+        "expenses": [
+            "expense-001",
+            "expense-002"
+        ]
+    },
+    {
+        "id": "budget-002",
+        "name": "IEEE Hackathon 2025",
+        "academicYear": "2024-2025",
+        "allocatedAmount": 3500.00,
+        "description": "24-hour hackathon event",
+        "status": "draft",
+        "createdAt": 1701388800,
+        "expenses": []
+    },
+    {
+        "id": "budget-003",
+        "name": "IEEE Community Outreach",
+        "academicYear": "2024-2025",
+        "allocatedAmount": 2000.00,
+        "description": "STEM outreach program for local schools",
+        "status": "submitted",
+        "createdAt": 1704067200,
+        "expenses": []
+    },
+    {
+        "id": "budget-004",
+        "name": "IEEE Annual Dinner 2023",
+        "academicYear": "2023-2024",
+        "allocatedAmount": 4000.00,
+        "description": "End of year celebration",
+        "status": "locked",
+        "createdAt": 1661990400,
+        "expenses": []
+    }
+]

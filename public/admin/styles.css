@@ -1,0 +1,747 @@
+/* Import Google Fonts - matching client design */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+/* CSS Variables - matching client theme */
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border: #e2e8f0;
+    --primary-blue: #2563eb;
+    --primary-dark: #1e40af;
+    --accent-purple: #7c3aed;
+    --status-success: #10b981;
+    --status-warning: #f59e0b;
+    --status-danger: #ef4444;
+    --status-info: #3b82f6;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header */
+header {
+    background: var(--bg-primary);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+header h1 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+}
+
+nav::-webkit-scrollbar {
+    height: 4px;
+}
+
+nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+nav::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+nav a:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+nav a.active {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* Buttons */
+.button {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+.button.primary {
+    background: var(--primary-blue);
+    color: white;
+}
+
+.button.primary:hover {
+    background: var(--primary-dark);
+}
+
+.button.success {
+    background: var(--status-success);
+    color: white;
+}
+
+.button.success:hover {
+    background: #059669;
+}
+
+.button.danger {
+    background: var(--status-danger);
+    color: white;
+}
+
+.button.danger:hover {
+    background: #dc2626;
+}
+
+.button.secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.button.secondary:hover {
+    background: var(--bg-primary);
+}
+
+/* Cards */
+.card {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-primary);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+thead {
+    background: var(--bg-secondary);
+}
+
+th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    transition: all 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Badges */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.badge.success {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--status-success);
+}
+
+.badge.warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--status-warning);
+}
+
+.badge.danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--status-danger);
+}
+
+.badge.info {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--status-info);
+}
+
+.badge.secondary {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    background: var(--bg-primary);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.empty-state h3 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Modal/Dialog */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+
+.modal {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal h2 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.action-button {
+    padding: 0.5rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    color: var(--text-secondary);
+}
+
+.action-button:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.action-button.edit:hover {
+    color: var(--primary-blue);
+    background: rgba(37, 99, 235, 0.1);
+}
+
+.action-button.delete:hover {
+    color: var(--status-danger);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Loading State */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid var(--border);
+    border-top-color: var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.gap-2 {
+    gap: 1rem;
+}
+
+/* Page-specific Styles */
+.section {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.section h2 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+/* Deadline Sections */
+.deadline-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.deadline-section {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+}
+
+.deadline-section h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    padding-bottom: 0.75rem;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    font-size: 1.25rem;
+}
+
+/* Only add border when h2 is not in a flex container */
+.deadline-section>h2 {
+    border-bottom: 2px solid var(--primary-blue);
+}
+
+/* Remove border and padding when h2 is in flex container */
+.flex h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Section Header (for flex header with button) */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Section Description */
+.section-description {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+/* Form Hint */
+.form-hint {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+/* Modal Actions */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modal-actions .button {
+    flex: 1;
+}
+
+
+.deadline-card {
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--primary-blue);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.deadline-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.deadline-card.official {
+    border-left-color: var(--status-danger);
+}
+
+.deadline-card.expired {
+    opacity: 0.6;
+    border-left-color: var(--text-muted);
+}
+
+.deadline-card.active {
+    border-left-color: var(--status-success);
+}
+
+.deadline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 0.5rem;
+}
+
+.deadline-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+
+.deadline-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-upcoming {
+    background: var(--status-info);
+    color: white;
+}
+
+.status-active {
+    background: var(--status-success);
+    color: white;
+}
+
+.status-expired {
+    background: var(--text-muted);
+    color: white;
+}
+
+.deadline-dates {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+}
+
+.date-label {
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.deadline-category {
+    display: inline-block;
+    background: var(--bg-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid var(--border);
+}
+
+.deadline-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-create {
+    background: var(--status-success);
+    color: white;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-create:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: var(--text-primary);
+}
+
+.output {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8125rem;
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .deadline-sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        gap: 0.25rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8125rem;
+    }
+
+    table {
+        font-size: 0.8125rem;
+    }
+
+    th,
+    td {
+        padding: 0.75rem 1rem;
+    }
+}

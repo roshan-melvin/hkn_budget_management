@@ -1,0 +1,31 @@
+[
+    {
+        "id": "deadline-001",
+        "title": "CASS Grant Application Deadline",
+        "dueDate": 1710460800,
+        "amount": 3000.00,
+        "priority": "high",
+        "status": "upcoming",
+        "notes": "Submit proposal for hackathon funding",
+        "createdAt": 1693526400
+    },
+    {
+        "id": "deadline-002",
+        "title": "Annual Budget Report",
+        "dueDate": 1715731200,
+        "priority": "medium",
+        "status": "upcoming",
+        "notes": "Submit final report for the academic year",
+        "createdAt": 1693526400
+    },
+    {
+        "id": "deadline-003",
+        "title": "Venue Deposit",
+        "dueDate": 1700000000,
+        "amount": 500.00,
+        "priority": "high",
+        "status": "completed",
+        "notes": "Pay deposit for the workshop venue",
+        "createdAt": 1693526400
+    }
+]

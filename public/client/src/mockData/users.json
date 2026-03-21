@@ -1,0 +1,10 @@
+[
+    {
+        "id": "user-001",
+        "username": "ieee_treasurer",
+        "email": "treasurer@ieee.edu",
+        "role": "treasurer",
+        "createdAt": 1640995200,
+        "timezone": "America/New_York"
+    }
+]

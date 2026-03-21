@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin - Academic Years Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 Academic Years Management</h1>
+            <nav>
+                <a href="index.html">Dashboard</a>
+                <a href="chapter_organizations.html">Organizations</a>
+                <a href="academic_years.html" class="active">Academic Years</a>
+                <a href="categories.html">Categories</a>
+                <a href="deadlines.html">Deadlines</a>
+                <button onclick="logout()" class="btn-logout">Sign Out</button>
+            </nav>
+        </header>
+
+        <!-- Create Academic Year -->
+        <div class="section">
+            <h2>➕ Create New Academic Year</h2>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="ayName" placeholder="e.g., 2026-2027">
+            </div>
+            <div class="form-group">
+                <label>Start Date:</label>
+                <input type="date" id="ayStartDate">
+            </div>
+            <div class="form-group">
+                <label>End Date:</label>
+                <input type="date" id="ayEndDate">
+            </div>
+            <button class="success" id="createBtn">Create Academic Year</button>
+            <div class="output" id="createOutput" style="display:none"></div>
+        </div>
+
+        <!-- List Academic Years -->
+        <div class="section">
+            <h2>📋 All Academic Years</h2>
+            <button id="refreshBtn">Refresh List</button>
+            <table id="ayTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ayTableBody">
+                    <tr>
+                        <td colspan="6" style="text-align:center">Loading...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Update Modal (hidden by default) -->
+        <div id="updateModal"
+            style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000">
+            <div style="background:#fff;max-width:500px;margin:100px auto;padding:30px;border-radius:8px">
+                <h2>Edit Academic Year</h2>
+                <input type="hidden" id="updateId">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" id="updateName">
+                </div>
+                <div class="form-group">
+                    <label>Start Date:</label>
+                    <input type="date" id="updateStartDate">
+                </div>
+                <div class="form-group">
+                    <label>End Date:</label>
+                    <input type="date" id="updateEndDate">
+                </div>
+                <div class="form-group" id="makeGlobalContainer" style="display:none">
+                    <label style="display:inline-block;cursor:pointer">
+                        <input type="checkbox" id="makeGlobal"> Make Global (Admin)
+                    </label>
+                    <p style="font-size:12px;color:#666;margin-top:5px">Convert this user-specific academic year to a
+                        global one available to everyone.</p>
+                </div>
+                <button class="success" id="saveUpdateBtn">Save Changes</button>
+                <button id="cancelUpdateBtn">Cancel</button>
+                <div class="output" id="updateOutput" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="academic_years.js"></script>
+    <script src="admin-check.js"></script>
+    <script src="admin-logout.js"></script>
+</body>
+
+</html>
