@@ -1,14 +1,3 @@
-# IEEE-HKN International Hackathon
-
-## Team Information
-**Team Name**: ROSHAN MELVIN G A
-
-**Team Members**:
-- [ALAGAPPAN A] — [Nu Eta Chapter, Sri Sairam Engineering College]
-- [SARAVANAN R K] — [Nu Eta Chapter, Sri Sairam Engineering College]
-- [HARINI M] — [Nu Eta Chapter, Sri Sairam Engineering College]
-- [NAKUL S] — [Nu Eta Chapter, Sri Sairam Engineering College]
-
 ## Project Overview
 A comprehensive full-stack budget management system designed for IEEE Eta Kappa Nu (HKN) chapters to streamline financial operations, grant applications, and event reporting. The system provides a unified platform for chapter leaders to manage budgets, track expenses, apply for grants, and generate financial reports.
 
